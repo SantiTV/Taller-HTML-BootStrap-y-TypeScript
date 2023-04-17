@@ -14,20 +14,14 @@
     />
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css" />
+    <script src="./Series.js"></script>
+    <script>
+      const seriesTable = new Series("series-table");
+    </script>
+    
+
   </head>
-  <script>
-    // Importar la clase Series
-    import { Series } from './Series.js';
-  
-    // Crear una instancia de la clase Series
-    const series = new Series();
-  
-    // Obtener la tabla
-    const table = document.getElementById('series-table');
-  
-    // Llenar la tabla con los datos de las series
-    table.innerHTML = series.getTableHTML();
-  </script>
+
   
   <body>
     <!-- Navigation -->
@@ -68,7 +62,7 @@
         <div class="container">
           <h1 class="display-4">TV Series</h1>
           <p class="lead">
-            Bienvenido a la página web oficial de la banda de rock TV Series.
+            Bienvenido a la página web de los fanaticos de las series de TV.
           </p>
         </div>
       </div>
@@ -76,5 +70,7 @@
 
  
     <table id="series-table"></table>
+
+  </body>
 
     

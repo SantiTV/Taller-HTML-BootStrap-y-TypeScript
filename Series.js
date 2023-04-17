@@ -1,15 +1,13 @@
-import { series } from "./Data";
+import { series } from "./Data.ts";
 
 class Series {
-  private table: HTMLTableElement;
-
-  constructor(tableId: string) {
-    this.table = document.getElementById(tableId) as HTMLTableElement;
+  constructor(tableId) {
+    this.table = document.getElementById(tableId);
     this.createTable();
   }
 
-  private createTable(): void {
-    // Create table header
+  createTable() {
+    // Encabezado de la tabla
     const header = this.table.createTHead();
     const row = header.insertRow();
     const idHeader = row.insertCell();
@@ -21,7 +19,7 @@ class Series {
     const seasonsHeader = row.insertCell();
     seasonsHeader.innerText = "Seasons";
 
-    // Create table body
+    // Crear la tabla
     const tbody = this.table.createTBody();
     series.forEach((s) => {
       const row = tbody.insertRow();
@@ -35,9 +33,8 @@ class Series {
       seasonsCell.innerText = s.seasons.toString();
     });
 
-    // Add Bootstrap classes to table
     this.table.classList.add("table", "table-striped");
   }
 }
 
-const seriesTable = new Series("series-table");
+new Series("series-table");
